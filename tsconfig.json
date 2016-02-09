@@ -1,0 +1,21 @@
+/**
+ * used by the command line utility TSC and by Visual Studio Code
+ * to automatically include .ts files.
+ * 
+ * it should match the settings you'll use in the gulpfile.js
+ * to compile the TypeScript files
+ */
+{
+	"compilerOptions": {
+		"target": "es5",
+		"sourceMap": true,
+		"module": "amd",
+		"outDir": "build"		
+	},
+	"exclude": [
+		"node_modules",
+		".vscode",
+		"build",
+		"libs"
+	]
+}

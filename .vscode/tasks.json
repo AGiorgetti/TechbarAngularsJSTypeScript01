@@ -57,14 +57,48 @@
             "taskName": "build-js",
             //"args": ["--suppressExcessPropertyErrors"],
 			//"args": ["--experimentalAsyncFunctions"],
-            "isBuildCommand": true,
+            "isBuildCommand": false,
             //"problemMatcher": "$msCompile",
 			"showOutput": "always",
 			"problemMatcher": [
                 "$lessCompile",
                 "$jshint"
             ]
-        }
+        },
+        // TypeScript related Tasks
+        {
+            "taskName": "build-ts",
+            //"args": ["--suppressExcessPropertyErrors"],
+			//"args": ["--experimentalAsyncFunctions"],
+            "isBuildCommand": true,
+            //"problemMatcher": "$msCompile",
+			"showOutput": "always",
+			"problemMatcher": [
+                "$lessCompile",
+                "$tsc",
+                "$jshint"
+            ]
+        },
+		{
+            "taskName": "watch",
+            //"args": [],
+            "isBuildCommand": false,
+            //"problemMatcher": "$msCompile",
+			"showOutput": "always",
+			"problemMatcher": [
+                "$lessCompile",
+                "$tsc",
+                "$jshint"
+            ]
+        },
+		{
+			"taskName": "tslint",
+            //"args": [],
+            "isBuildCommand": false,
+            //"problemMatcher": "$msCompile",
+			"showOutput": "always",
+			"problemMatcher": [{ "pattern": { "regexp": "^([^:]*):(\\d+):(\\d+):(.*)", "file": 1, "line":2, "column":3, "message":4	}, "fileLocation": ["absolute"] }]
+		}
     ]
 }
 
