@@ -35,8 +35,10 @@ var tsOptions = {
 var tsFiles = [paths.src + "**/*.ts", "typings/**/*.d.ts"];
 var source = gulp.src(tsFiles);
 
+var filesToLint = [paths.src + "**/*.ts"]; 
+
 gulp.task("tslint", function () {
-    return source
+    return gulp.src(filesToLint)
         .pipe(tslint())
         .pipe(tslint.report("verbose"));
 });

@@ -20,7 +20,7 @@ class SampleLogger implements ILogger {
      */
     log2 = (message: string): void => {
         console.log(message);
-    }
+    };
 }
 
 let logger = new SampleLogger();
