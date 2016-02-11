@@ -19,10 +19,15 @@ namespace Techbar {
     /**
      * an actual ToDo item implementation if we need it
      */
-    class TodoItem implements ITodoItem {
+    export class TodoItem implements ITodoItem {
         id: number;
         task: string;
         completed: boolean;
+        
+        constructor(id: number, task: string) {
+            this.id = id;
+            this.task = task;
+        }
     }
 
 }

@@ -49,7 +49,6 @@ namespace Techbar {
         }
     }
 
-    angular.module("app")
-        .service("TodoListService", TodoListService);
+    angular.module("app").service("TodoListService", TodoListService);
 
 }
