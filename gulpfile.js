@@ -73,12 +73,12 @@ gulp.task("compile-ts", function () {
 // inject compiled and artifacts
 
 gulp.task("copy-js", function () {
-    gulp.src(paths.src + "**/*.js")
+    return gulp.src(paths.src + "**/*.js")
         .pipe(gulp.dest(paths.build));
 });
 
 gulp.task("copy-templates", function () {
-    gulp.src(paths.src + "**/*.html")
+    return gulp.src(paths.src + "**/*.html")
         .pipe(gulp.dest(paths.build));
 });
 
@@ -86,7 +86,7 @@ gulp.task("copy-templates", function () {
 gulp.task("inject", 
     ["compile-ts"],
     function () {
-        gulp.src(paths.src + "index.html")
+        return gulp.src(paths.src + "index.html")
             .pipe(inject(
                 gulp.src([paths.build + "**/*.js"]).pipe(angularFilesort())
                 , { relative: true }))

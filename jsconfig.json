@@ -5,6 +5,8 @@
 	},
 	"exclude": [
 		"./build",
-		"./typings"
+		"./typings",
+        "build",
+		"typings"
 	]
 }

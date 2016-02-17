@@ -78,3 +78,30 @@ Purge global caches:
 -----------------------
 
 tsd purge
+
+
+-----------------------
+Fix to the samples
+-----------------------
+
+In the 'tagged' version there were some mistakes on some files, here are the fix to apply to run each step properly:
+
+**Fix the jsconfig.json​**
+Add the right exclude paths, otherwise whenever you build the application even the files inside the 'build' artifact folder will be compiled by the editor.​
+
+The fix is:​
+
+"exclude": [​
+"./build",​
+"./typings",​
+"build",​
+"typings"​
+]
+
+**Fix the Gullpfile.js​**
+I forgot the 'return' statement on all the gulp tasks, without that operations in every task are run concurrently (if you have task that depends on them they will be started in the correct order, but gulp will not wait for the dependent task to end):​
+http://stackoverflow.com/questions/24619290/making-gulp-write-files-synchronously-before-moving-on-to-the-next-task​
+
+The fix is:​
+
+Add a 'return' statement to every task.​
